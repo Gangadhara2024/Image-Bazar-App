@@ -1,5 +1,21 @@
-.box{
+/* .box {
   padding: 20px;
-  border:2px solid blue;
+  border: 2px solid blue;
   margin: 10px;
+} */
+.navbar {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  background-color: #cfacac;
+}
+
+.link {
+  text-decoration: none;
+  color: #333333;
+  font-size: 1.1rem;
+}
+.active-link {
+  font-weight: 500;
+  color: black;
 }

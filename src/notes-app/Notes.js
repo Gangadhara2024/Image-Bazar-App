@@ -1,3 +1,72 @@
+// PS C:\Users\ganga\Documents\React-js\react-1> git status
+// fatal: not a git repository (or any of the parent directories): .git
+// Initialized empty Git repository in C:/Users/ganga/Documents/React-js/react-1/.git/
+// PS C:\Users\ganga\Documents\React-js\react-1> git remote add origin https://github.com/Gangadhara2024/React-notes-code.git
+// PS C:\Users\ganga\Documents\React-js\react-1> git status
+// On branch master
+
+// No commits yet
+
+// Untracked files:
+//         .gitignore
+//         README.md
+//         package-lock.json
+//         package.json
+//         public/
+//         src/
+
+// nothing added to commit but untracked files present (use "git add" to track)
+// PS C:\Users\ganga\Documents\React-js\react-1> git add .
+// warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+// warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+// warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+// warning: in the working copy of 'public/index.html', LF will be replaced by CRLF the next time Git touches it
+// warning: in the working copy of 'src/App.js', LF will be replaced by CRLF the next time Git touches it
+// warning: in the working copy of 'src/index.js', LF will be replaced by CRLF the next time Git touches it
+// PS C:\Users\ganga\Documents\React-js\react-1> git commit -m "checking"
+// [master (root-commit) 9175c70] checking
+//  10 files changed, 18599 insertions(+)
+//  create mode 100644 .gitignore
+//  create mode 100644 README.md
+//  create mode 100644 package-lock.json
+//  create mode 100644 package.json
+//  create mode 100644 public/index.html
+//  create mode 100644 src/App.css
+//  create mode 100644 src/App.js
+//  create mode 100644 src/app.scss
+//  create mode 100644 src/index.css
+//  create mode 100644 src/index.js
+// PS C:\Users\ganga\Documents\React-js\react-1> git status
+// On branch master
+// nothing to commit, working tree clean
+// PS C:\Users\ganga\Documents\React-js\react-1> git push -u origin master
+// Enumerating objects: 14, done.
+// Counting objects: 100% (14/14), done.
+// Delta compression using up to 4 threads
+// Compressing objects: 100% (12/12), done.
+// Writing objects: 100% (14/14), 158.88 KiB | 2.37 MiB/s, done.
+// Total 14 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+// To https://github.com/Gangadhara2024/React-notes-code.git
+//  * [new branch]      master -> master
+// branch 'master' set up to track 'origin/master'.
+
+// PS C:\Users\ganga\Documents\React-js\notes-r> git pull origin master
+// >>
+// From https://github.com/Gangadhara2024/Image-Bazar-App
+//  * branch            master     -> FETCH_HEAD
+// fatal: refusing to merge unrelated histories
+// PS C:\Users\ganga\Documents\React-js\notes-r> git push -f origin master
+// >>
+// Enumerating objects: 30, done.
+// Counting objects: 100% (30/30), done.
+// Delta compression using up to 4 threads
+// Compressing objects: 100% (29/29), done.
+// Writing objects: 100% (30/30), 191.14 KiB | 4.78 MiB/s, done.
+// Total 30 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+// remote: Resolving deltas: 100% (3/3), done.
+// To https://github.com/Gangadhara2024/Image-Bazar-App.git
+//  + 6051ede...bbcebd8 master -> master (forced update)
+
 // @@@@ useEffect in react.
 
 //   const EffectExample = () => {
@@ -352,7 +421,124 @@
 // here memo is function not a hook.
 
 //  memo syntax =>  memo(({x}) => {
-//                               hello                            
+//                               hello
 //                              })
-      
+
 // when props (or) anychange takes place, then only memo function will excute.
+
+// static routing
+
+// const App = () => {
+//   return (
+//     <div>
+//       <h1>entry component</h1>
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path="home" element={<Home />}></Route>
+//           <Route path="about" element={<About />}></Route>
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// const Home = () => {
+//     return (
+//       <div>
+//         <h1>Home page !</h1>
+//         <Link to="/xyz">home page</Link>
+//       </div>
+//     );
+//   };
+
+//   export default Home;
+
+//   const About = () => {
+//     return (
+//       <div>
+//         <h1>about page</h1>
+//         <Link to="/abc">about page</Link>
+//       </div>
+//     );
+//   };
+
+//   export default About;
+
+//             @#@#  Dynamic routing
+
+// const RoutingApp = () => {
+//       const Layout = () => {
+//         return (
+//           <div>
+//             <h1>this is user route</h1>
+//             <Outlet />
+//             {/* outlet defined nested components    */}
+//           </div>
+//         );
+//       };
+//       return (
+//         <BrowserRouter>
+//           <Routes>
+//             <Route path="user" element={<Layout />}>
+//               <Route path="home" element={<h2>home rout for user</h2>} />
+//               <Route path="about" element={<h2>about rout for user</h2>} />
+//             </Route>
+//           </Routes>
+//         </BrowserRouter>
+//       );
+//     };
+
+//     export default RoutingApp;
+
+//          NESTED ROUTING
+
+// const Layout = () => {
+//       const location = useLocation();
+//       console.log(location);
+
+//       return (
+//         <div>
+//           <nav>
+//             <div>
+//               <Link
+//                 to="/user/home"
+//                 style={{
+//                   color: location.pathname === "/user/home" ? "red" : "",
+//                 }}
+//               >
+//                 Home
+//               </Link>
+//             </div>
+//             <div>
+//               <Link
+//                 to="/user/about"
+//                 style={{
+//                   color: location.pathname === "/user/about" ? "red" : "",
+//                 }}
+//               >
+//                 About
+//               </Link>
+//             </div>
+//           </nav>
+//           <Outlet />
+//           {/* outlet defined nested components    */}
+//         </div>
+//       );
+//     };
+
+//     const RoutingApp = () => {
+//       return (
+//         <BrowserRouter>
+//           <Routes>
+//             <Route path="user" element={<Layout />}>
+//               <Route path="home" element={<Home />} />
+//               <Route path="about" element={<About />} />
+//             </Route>
+//           </Routes>
+//         </BrowserRouter>
+//       );
+//     };
+
+//     export default RoutingApp;

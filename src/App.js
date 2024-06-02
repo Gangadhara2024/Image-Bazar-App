@@ -1,12 +1,14 @@
 
-import MemoExample from './components/MemoExample'
+import RoutingApp from "./components/RoutingApp";
+import BookMyShow from "./routing-example/BookMyShow";
 
 const App = () => {
   return (
-    <div>
-      <MemoExample/>
-    </div>
-  )
-}
+    <>
+     
+      <BookMyShow/>
+    </>
+  );
+};
 
-export default App
+export default App;
